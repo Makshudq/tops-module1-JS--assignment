@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 20rem;
+            margin: auto;
+            border: 1px solid;
+            border-radius: 1rem;
+            padding: 1rem;
+
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .keys_grp {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            margin-top: 1rem;
+        }
+
+        .keys {
+            border: 1px solid;
+            margin: .5rem;
+            height: 2rem;
+            width: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: .2rem;
+        }
+
+        .bottom_container {
+            display: flex;
+            /* justify-content: space-between; */
+        }
+
+        .output {
+            display: flex;
+            justify-content: center;
+        }
+
+        #ans_output {
+            font-size: 1.2rem;
+            margin: .5rem;
+        }
+
+        /* marksheet................  */
+
+        .container2 {
+            width: 20rem;
+            margin: auto;
+            border: 1px solid;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .markSheet {
+            text-align: center;
+        }
+
+        .label {
+            display: inline-block;
+            width: 8rem;
+        }
+
+        .inputs_div {
+            margin: .5rem;
+        }
+
+        .output_result {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* Create a slider using JavaScript */
+        .slider_container {
+            width: 80vmin;
+            height: 45vmin;
+            margin: auto;
+            border: 1px solid;
+            border-radius: 1rem;
+            padding: 1rem;
+            background-color: black;
+
+            .title_slider {
+                text-align: center;
+                color: #fff;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            .sub_title_slider {
+                text-align: center;
+                color: #c0c0c0;
+                font-size: 1rem;
+
+            }
+
+            .slider_box_div {
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
+                width: 100%;
+                /* scrollbar-width: none; */
+
+                .box {
+                    display: inline-block;
+                    height: 5rem;
+                    width: 6rem;
+                    background-color: #fff;
+                    margin: .2rem;
+                }
+
+                #box1 {
+                    background-color: yellow;
+                }
+
+                #box2,
+                #box7 {
+                    background-color: red;
+                }
+
+                #box3,
+                #box8 {
+                    background-color: blue;
+                }
+
+                #box4,
+                #box9 {
+                    background-color: green;
+                }
+
+                #box5,
+                #box10 {
+                    background-color: lightseagreen;
+                }
+
+            }
+
+            .arrows {
+                display: flex;
+                justify-content: space-around;
+                margin: 1.5rem;
+
+                .arrow {
+                    color: #d0d0d0;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+
+        .conatainer_color {
+            width: 20rem;
+            height: 15rem;
+            margin: auto;
+            border: 1px solid;
+            border-radius: .4rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            #colr_btn {
+                background-color: #8afdc0;
+                border: none;
+                padding: .5rem;
+                color: #474747;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+        .focusedBox {
+            height: 7rem !important;
+            width: 9rem !important;
+            margin: .1rem;
+            /* position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .4s;
+            transform-origin: center; */
+        }
+
+        .outer {
+            border: .5px solid;
+            display: inline-block;
+            margin: .5rem;
+
+            #pass_input1 {
+                border: none;
+
+                &:focus {
+                    border: transparent;
+                    outline: none;
+                }
+            }
+            .eye {
+                border: none;
+                background: transparent;
+            }
+        }
+
+        .conatainer_password {
+            width: 20rem;
+            height: 15rem;
+            margin: auto;
+            border: 1px solid;
+            border-radius: .4rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(128, 212, 254);
+
+            #pass_input1 {
+                background-color: rgb(128, 212, 254);
+            }
+        }
+
+        .container_validation {
+            margin: auto;
+            width: 50vmin;
+            border: 1px solid;
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 1.2rem;
+
+
+            h3 {
+                text-align: center;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .inputs_div {
+                margin: .5rem;
+                width: 100%;
+            }
+
+            input {
+                width: 100%;
+                padding: .5rem;
+            }
+
+            button {
+                width: 100%;
+                background-color: rgb(68, 68, 255);
+                color: #fff;
+                font-weight: bold;
+                padding: .5rem;
+                border: none;
+                border-radius: .3rem;
+            }
+        }
+        .container_validation {
+            .error {
+                color: rgb(255, 52, 52);
+                margin: .2rem;
+                display: none;
+            }
+            .show {
+                display: block !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Create basic math operation in JS....................................................   -->
+
+    <!-- <div class="container">
+            <h4 class="title">Maths Operation</h4>
+            <label for="input1">Enter 1st Number: </label>
+            <input type="number" name="input1" id="inputOne"> <br> <br>
+            <label for="input2">Enter 2nd Number: </label>
+            <input type="number" name="input2" id="inputTwo"> <br>
+            <div class="bottom_container">
+                <div class="keys_grp">
+                    <div class="keys" id="plus" onclick="calculate('plus')">+</div>
+                    <div class="keys" id="minus" onclick="calculate('minus')">-</div>
+                    <div class="keys" id="multi" onclick="calculate('multi')">*</div>
+                    <div class="keys" id="divide" onclick="calculate('divide')">/</div>
+                    <div class="keys" id="module" onclick="calculate('module')">%</div>
+                </div>
+                <div class="output">
+                    <h5>Answer is: <span id="ans_output"></span></h5>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- Create result..........................................................   -->
+
+    <!-- <div class="container2">
+            <h4 class="markSheet">Marksheet For Information Technology</h4>
+
+            <div class="inputs_div">
+                <label class="label">1. C Language </label>
+                <input type="text" id="c">
+            </div>
+
+            <div class="inputs_div">
+                <label class="label">2.C++ Language</label>
+                <input type="text" id="cplus">
+            </div>
+            <div class="inputs_div">
+                <label class="label">3.Database</label>
+                <input type="text" id="db">
+            </div>
+            <div class="inputs_div">
+                <label class="label">4. HTML</label>
+                <input type="text" id="html">
+            </div>
+            <div class="inputs_div">
+                <label class="label">5. CSS</label>
+                <input type="text" id="css">
+            </div>
+            <div class="inputs_div">
+                <label class="label">6. PHP</label>
+                <input type="text" id="php">
+            </div>
+            <div class="inputs_div">
+                <label class="label">7. Core Java</label>
+                <input type="text" id="java">
+            </div>
+            <div class="btn">
+                <label class="label"></label>
+                <input type="button" id="java" value="Result" onclick="calculateAvg()">
+
+            </div>
+            <div class="output_result">
+                <p>Total is: &nbsp; <span id="total"></span> /350</p>
+                <p>Percentage is: <span id="perc"></span> %</p>
+            </div>
+        </div> -->
+
+
+ <!-- Create a slider using JavaScript...............................................................  -->
+
+    <!-- <div class="slider_container">
+        <h3 class="title_slider">Simple Javascript Slider</h3>
+        <h5 class="sub_title_slider">Created by Makshud</h5>
+
+        <div class="slider_box_div" id="scroll_div">
+            <div class="box  " id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <div class="box" id="box6"></div>
+            <div class="box" id="box7"></div>
+            <div class="box" id="box8"></div>
+            <div class="box" id="box9"></div>
+            <div class="box" id="box10"></div>
+        </div>
+
+        <div class="arrows">
+            <i class="fa fa-arrow-left arrow" aria-hidden="true" onclick="focusScrollBox(0)"></i>
+            <i class="fa fa-arrow-right arrow" aria-hidden="true" onclick="focusScrollBox(1)"></i>
+        </div>
+    </div> -->
+
+
+  <!-- Change background using java script............................................   -->
+    <!-- <div class="conatainer_color" id="conatainer_color">
+        <button id="colr_btn" onclick="chaangeBGColor()">Change BG Color</button>
+        <input type="text" id="clg_input" class="test_input" placeholder="Enter Color Code">
+    </div> -->
+
+
+
+       <!-- Create a hide show password functionalities...................................................  -->
+
+    <!-- <div class="conatainer_password">
+        <div class="outer">
+            <input id="pass_input1" placeholder="Enter Password">
+            <button class="eye" id="eye_btn" onclick='hidetext()'><i class="fa fa-eye" aria-hidden="true"
+                    id="eye_icon"></i></button>
+        </div>
+    </div> -->
+
+
+    <!-- Create a form and apply validations as shown in below example........................  -->
+
+    <!-- <form class="container_validation">
+        <h3>Sign Up Form</h3>
+        <div class="inputs_div">
+            <label for="">Username:</label> <br>
+            <input type="text" id="username">
+            <p class="error" id="error_username">Username must be between 3 and 25 Charecters</p>
+        </div>
+        <div class="inputs_div">
+            <label for="">Email:</label><br>
+            <input type="email" id="emailInput">
+            <p class="error" id="error_email">Email must be in email formate.</p>
+        </div>
+
+        <div class="inputs_div">
+            <label for="">Password:</label><br>
+            <input type="password" id="password">
+            <p class="error" id="error_password">Password must have atleast 8 charecters, include atleast 1 lowercase
+                charecter, 1 uppercase charecter, 1 number and 1 special charecter in (!@#$%^&*)</p>
+        </div>
+        <div class="inputs_div">
+            <label for="">Confirm Password:</label><br>
+            <input type="password" id="consfirmPass">
+            <p class="error" id="error_confirmPassword">Password must match</p>
+        </div>
+        <div class="inputs_div">
+            <button type="submit" onclick="submiteForm()">Sign up</button>
+        </div>
+
+    </form> -->
+
+ 
+    
+    <script>
+
+
+        // Q.1 Using console.log() print out the following statement: The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another. Using console.log() print out the following quote by Mother Teresa:
+
+        // console.log('There is no exercise better for the heart than reaching down and lifting people up.')
+
+
+        // Q.2 Check if typeof '10' is exactly equal to 10. If not make it exactly equal?
+
+        // console.log("10" === 10)
+        //false
+
+        // console.log(Number('10') === 10)
+        // true
+
+        // let num = 10
+        // console.log('10' === (num.toString()))
+        // true
+
+
+
+        //Q.3 Write a JavaScript Program to find the area of a triangle?
+
+        // function areaTriangle(b, h) {
+        //     return 1 / 2 * b * h
+        // }
+        // console.log(areaTriangle(5, 10))
+
+
+        // Q.4 Write a JavaScript program to calculate days left until next Christmas?
+
+        // let christmasDate = new Date('12 / 25 / 2024')
+        // let todaysDate = new Date()
+        // let differDate = christmasDate - todaysDate
+        // console.log(Math.round(differDate / (1000 * 60 * 60 * 24)))
+
+
+
+        // Q.5 What is Condition Statement?
+
+        // A condition statement is a way for a program to make decisions. It allows the program to check if a certain condition is true or false, and then do different things based on that.The most common type of condition statement in JavaScript is the if-else statement.
+
+
+
+        // Q.6 Find circumference of Rectangle formula : C = 4 * a ?
+
+        // function rectangleCircum(a) {
+        //     return a * 4
+        // }
+        // console.log(rectangleCircum(5))
+
+
+
+        // Q.7 WAP to convert years into days and days into years?
+
+        // function yearDays(y) {
+        //     let days = y * 365
+        //     return Math.round(days)
+        // }
+        // console.log(yearDays(1.5))
+
+        // function Daysyear(d) {
+        //     let year = d / 365
+        //     return year.toFixed(2)
+
+        // }
+        // console.log(Daysyear(500))
+
+
+        // Q.8 Convert temperature Fahrenheit to Celsius? (Conditional logic Question)
+
+        // function fahrenheitCelcius(f) {
+        //     let celcius = (f - 32) * (5 / 9)
+
+        //     return celcius.toFixed(2)
+        // }
+        // // console.log(fahrenheitCelcius(80))
+        // document.write('Convertion of given Fahrenheit tempreture to Celcius is: ' + fahrenheitCelcius(80))
+
+
+        // Q.9 Write a JavaScript exercise to get the extension of a filename.?
+
+        // let fileName = 'abcdefg.doc'
+        // let fileName = 'mozila.org'
+
+        // function getextension() {
+        //     let dotindex = fileName.indexOf('.')
+        //     console.log(dotindex)
+
+        //     let extensrionNAme = fileName.substr(dotindex + 1)
+        //     console.log(extensrionNAme)
+        // }
+
+        // getextension()
+
+
+
+        // Q.10What is the result of the expression (5 > 3 && 2 < 4)?
+        // True
+
+
+
+        // Q.11What is the result of the expression (true && 1 && "hello")?
+
+        // if (true && 1 && "hello") {
+        //     console.log(true)
+        // } // true
+
+
+
+        // Q.12What is the result of the expression true && false || false && true?
+
+        // False
+
+
+
+        // Q.13Check Number Is Positive or Negative in JavaScript?
+
+        // let number = -2;
+
+        // function checkpositiveNegative(number) {
+        //     if (number > 0) document.write(number + ' : Number is Positive')
+        //     else document.write(number + ' : Number is Negative')
+        // }
+
+        // checkpositiveNegative(number)
+
+
+
+        // Q.14Find the Character Is Vowel or Not ?
+
+        // let vowel = ['a', 'e', 'i', 'o', 'u']
+
+        // let char = 'a'
+
+        // function checkVowel(char) {
+        //     for (val of vowel) {
+        //         if (char === val) {
+        //             document.write(char + ' Charecter is vowel')
+        //             return
+        //         }
+        //     }
+        //     document.write(char + ' Charecter is Not vowel')
+        // }
+        // checkVowel(char)
+
+
+
+        // Q.15 Write to check whether a number is negative, positive or zero?
+
+        // let numtocheck = 0;
+
+        // function checkNum(numtocheck) {
+        //     if (numtocheck > 0) {
+        //         document.write(numtocheck + ': Number is Positive')
+        //     } else if (numtocheck < 0) {
+        //         document.write(numtocheck + ': Number is Negative')
+        //     }
+        //     else {
+        //         document.write(numtocheck + ': Number is Zero')
+        //     }
+        // }
+        // checkNum(numtocheck)
+
+
+        // Q.16Write to find number is even or odd using ternary operator in JS?
+
+        // let num2 = 12;
+
+        // (num2 % 2 == 0) ? document.write(num2 + ' Number is even') : document.write(num2 + ' Number is Odd')
+
+
+
+        // Q.17Write find maximum number among 3 numbers using ternary operator in JS?
+
+        // let a = 7;
+        // let b = 5;
+        // let c = 3;
+
+        // let maximumnum = (a > b) ? (a > c ? a : c) : (b > c ? b : c)
+
+        // console.log(maximumnum)
+
+
+
+        // Q.18Write to find minimum number among 3 numbers using ternary operator in JS?
+
+        // let a = 21;
+        // let b = 15;
+        // let c = 7;
+
+        // let minimumNum = a < b ? (a < c ? a : c) : (b < c ? b : c)
+        // console.log(minimumNum)
+
+
+
+        // Q.19Write to find the largest of three numbers in JS?
+
+        // let numArray = [3, 15, 8]
+
+        // let largestnum = 0;
+        // for (val of numArray) {
+        //     if (val > largestnum) largestnum = val
+        // }
+        // console.log(largestnum)
+
+
+
+        //Q.20Write to show
+        // i. Monday to Sunday using switch case in JS?
+
+        // let todayDate = new Date()
+
+        // let day = todayDate.getDay()
+
+        // let dayToday = ""
+        // switch (day) {
+        //     case 0: dayToday = 'Sunday';
+        //         break;
+        //     case 1: dayToday = 'Monday';
+        //         break;
+        //     case 2: dayToday = 'Tuesday';
+        //         break;
+        //     case 3: dayToday = 'Wednesday';
+        //         break;
+        //     case 4: dayToday = 'Thursday';
+        //         break;
+        //     case 5: dayToday = 'Friday';
+        //         break;
+        //     case 6: dayToday = 'saturday';
+        //         break;
+        // }
+        // document.write('Today Day is : ' + dayToday)
+
+
+
+        // ii. Vowel or Consonant using switch case in JS?
+
+        // let char = 'j'
+
+        // switch (char) {
+        //     case 'a': document.write('Charecter is Vowel')
+        //         break;
+        //     case 'e': document.write('Charecter is Vowel')
+        //         break;
+        //     case 'i': document.write('Charecter is Vowel')
+        //         break;
+        //     case 'o': document.write('Charecter is Vowel')
+        //         break;
+        //     case 'u': document.write('Charecter is Vowel')
+        //         break;
+        //     default: document.write('charecter is Consonant')
+        // }
+
+
+        // Q.21What are the looping structures in JavaScript? Any one Example?
+
+        // Looping structres in js are set of instructions which need to be repeated for a specified number of times or till a condition is reached.Example - for loop
+
+        // for (let i = 0; i < 5; i++) {
+        //         console.log(i);
+        //     }
+
+
+
+        // Q.22 Write a print 972 to 897 using for loop in JS?
+
+        // for (let i = 972; i > 896; i--) {
+        //     document.write('<br>' + i)
+        // }
+
+
+
+        // Q.23Write to print factorial of given number?
+
+        // let factorialNum = 5;
+        // let result = 1
+        // for (let i = 1; i <= factorialNum; i++) {
+        //     result *= i
+        // }
+        // console.log(result)
+
+
+
+        // Q.24Write to print Fibonacci series up to given numbers?
+
+        // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ....
+
+        // let fiboNum = 20;
+        // let result = [0, 1];
+        // for (let i = 0; i <= fiboNum; i++) {
+        //     if (result[i + 1] < fiboNum) {
+        //         sum = result[i] + result[i + 1]
+        //         result.push(sum)
+        //     }
+        // }
+        // document.write(result)
+
+
+
+        // Q.25Write to print number in reverse order e.g.: number = 64728 ---> reverse =82746 in JS?
+
+        // let revNums = '64728';
+
+        // let newArr = revNums.split('')
+        // console.log(newArr.reverse().join(''))
+
+
+        // Q.26Write a program make a summation of given number (E.g., 1523 Ans: - 11) in JS?
+
+        // let summationNum = '2235';
+        // let sumArray = summationNum.split('')
+        // console.log(sumArray)
+        // let sum = 0
+        // for (val of sumArray) {
+        //     sum += Number(val)
+        // }
+        // console.log(sum)
+
+
+
+        // Q.27 Write a program you have to make a summation of first and last Digit. (E.g., 1234 Ans: - 5) in JS?
+
+        // let sumFirstLastnum = 22456;
+
+        // let arrsplit = sumFirstLastnum.toString().split('')
+        // let sum = Number(arrsplit[0]) + Number(arrsplit[arrsplit.length - 1])
+        // console.log(sum)
+
+
+
+        // Q.28Use console.log() and escape characters to print the following pattern in JS ?
+        // 1 1 1 1 1
+        // 2 1 2 4 8
+        // 3 1 3 9 27
+        // 4 1 4 16 64
+        // 5 1 5 25 125
+
+
+        // for (i = 1; i < 6; i++) {
+        //     document.writeln(i)
+        //     for (j = 0; j < 4; j++) {
+        //         document.writeln(i ** j)
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+        // Q.29Use pattern in console.log in JS?
+        // 1) 1
+        // 1 0
+        // 1 0 1
+        // 1 0 1 0
+        // 1 0 1 0 1
+
+        // for (i = 0; i < 5; i++) {
+        //     var power = true;
+        //     for (j = 0; j <= i; j++) {
+        //         if (power) {
+        //             document.writeln(1 ** j)
+        //             power = false
+        //         }
+        //         else {
+        //             document.writeln(1 * 0)
+        //             power = true
+        //         }
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+
+        // 2) A
+        // B C D
+        // E F
+        // G H I
+        // K L M N O
+
+
+        //  output :
+        // A
+        // B C
+        // D E F
+        // G H I J
+        // K L M N O
+
+
+
+        // 3) 1
+        //  2 3
+        //  4 5 6
+        //  7 8 9 10
+        //  11 12 13 14 15
+
+        // let counter = 1
+        // for (let i = 0; i < 5; i++) {
+        //     for (j = 0; j <= i; j++) {
+        //         document.writeln(counter)
+        //         counter++
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+
+
+        //4)
+        //  *
+        // * *
+        // * * *
+        // * * * *
+        // * * * * *
+
+
+
+        // let counter = 1
+        // for (let i = 0; i < 5; i++) {
+        //     for (j = 0; j <= i; j++) {
+        //         document.writeln('*')
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+        // let usernum = prompt('Enter 3 digit number to scheck Palindrom')
+
+        // let numsplit = usernum.split('')
+
+        // let newReverse = numsplit.reverse().join('')
+
+        // if (usernum == newReverse) {
+        //     console.log("Number is palondrom")
+        // }
+        // else {
+        //     console.log("Number is not palondrom")
+        // }
+
+
+
+        // Q.31 Write a JavaScript Program to display the current day and time in the
+        // following format. Sample Output: Today is Friday. Current Time is 12 PM: 12 : 22
+        // 2 ?
+
+        // let todayDate = new Date()
+
+        // let day = todayDate.getDay()
+        // let timeh = todayDate.getHours()
+        // let timem = todayDate.getMinutes()
+        // let times = todayDate.getSeconds()
+
+        // if (timeh > 12) {
+        //     var timespan = 'pm'
+        //     timeh = timeh - 12
+        // } else {
+        //     timespan = 'am'
+        // }
+
+        // let dayToday = ""
+        // switch (day) {
+        //     case 0: dayToday = 'Sunday';
+        //         break;
+        //     case 1: dayToday = 'Monday';
+        //         break;
+        //     case 2: dayToday = 'Tuesday';
+        //         break;
+        //     case 3: dayToday = 'Wednesday';
+        //         break;
+        //     case 4: dayToday = 'Thursday';
+        //         break;
+        //     case 5: dayToday = 'Friday';
+        //         break;
+        //     case 6: dayToday = 'saturday';
+        //         break;
+        // }
+        // document.write('Today Day is: ' + ' ' + dayToday + ' and Time is ' + timeh + ' ' + timespan + ' : ' + timem + ' : ' + times)
+
+
+        // Q.32Write a JavaScript program to get the current date?
+
+        // let myData = new Date()
+        // let currentData = myData.getDate()
+        // console.log(currentData)
+
+
+
+        // Q.33Write a JavaScript program to compare two objects?
+
+        // let obj1 = {
+        //     name: 'raman',
+        //     city: 'agra',
+        //     area: 25
+        // }
+
+        // let obj2 = {
+        //     name: 'raman',
+        //     city: 'ccc',
+        //     area: 253
+        // }
+
+        // function compareobj(obj1, obj2) {
+
+        //     for (key in obj1) {
+        //         // console.log(obj1[key])
+        //         if (obj1[key] === obj2[key]) {
+        //             console.log(true)
+        //         } else {
+        //             console.log(false)
+        //         }
+        //     }
+        // }
+
+        // console.log(compareobj(obj1, obj2))
+
+
+
+        // Q.34Write a JavaScript program to convert an array of objects into CSV string?
+
+        // let arrobj = [
+        //     { name: 'mak', country: 'ind', state: 'guj' },
+        //     { name: 'mak2', country: 'ind2', state: 'guj2' },
+        //     { name: 'mak3', country: 'ind3', state: 'guj3' }
+        // ]
+
+        // let array = []
+        // arrobj.map(val => {
+        //     for (key in val) {
+        //         array.push(key)
+        //         array.push(val[key])
+        //     }
+        // })
+        // console.log(array)
+
+
+
+        // Q.35Write a JavaScript program to capitalize first letter of a string?
+
+        // let str = 'hello, world'
+
+        // let strarr = str.split('')
+
+        // console.log(str.replace(str.charAt(0), str.charAt(0).toUpperCase()))
+
+
+
+        // Q. 45 Write a JavaScript program to determine if a variable is array?4
+
+        // let isarr = [1, 2, 3]
+        // console.log(Array.isArray(isarr))
+
+
+
+        // Q.46 Write a JavaScript program to clone an array?
+
+        // var Array1 = [1, 2, 3, 4, 5];
+
+        // function cloningArray(param) {
+        //     return param
+        // }
+        // let newarr1 = cloningArray(Array1)
+
+        // console.log(Array1)
+        // console.log(newarr1)
+
+
+
+        // Q.47 What is the drawback of declaring methods directly in JavaScript objects?
+
+        //         The main drawback of declaring methods directly in JavaScript objects is that it can lead to inefficient memory usage, especially when you have multiple objects with the same methods.
+
+        // When you declare a method directly in an object, a new copy of that method is created for each object instance. This means that if you have 100 objects with the same method, you will have 100 copies of that method in memory, which can be wasteful and inefficient.
+
+        // eg; -
+
+        // const person1 = {
+        //   name: "John",
+        //   sayHello: function() {
+        //     console.log(`Hello, my name is ${this.name}`);
+        //   }
+        // };
+
+        // const person2 = {
+        //   name: "Jane",
+        //   sayHello: function() {
+        //     console.log(`Hello, my name is ${this.name}`);
+        //   }
+        // };
+        // In this case, both person1 and person2 have a sayHello method, but each object has its own copy of the method in memory.
+
+
+        // solution: -
+
+        // To address this issue, you can use prototypes or classes to define methods that are shared among all object instances. This way, only one copy of the method is stored in memory, and all objects can access it. This can lead to significant memory savings, especially when you have a large number of objects.
+
+        // eg;
+
+        // function Person(name) {
+        //     this.name = name;
+        // }
+        // Person.prototype.sayHello = function () {
+        //     console.log(`Hello, my name is ${this.name}`);
+        // };
+        // const person1 = new Person("John");
+        // const person2 = new Person("Jane");
+        // console.log(person1.sayHello()) // Hello, my name is John
+
+        // In this example, the sayHello method is defined on the Person prototype, so both person1 and person2 can access the same method, rather than having their own copies.
+
+        // Q.48 Print the length of the string on the browser console using console.log()?
+
+        // let string = 'Hello, coders'
+        // console.log(string.length)
+
+
+        // Q.49 Change all the string characters to capital letters using toUpperCase()
+        // method?
+
+        // let string = 'Hello, coders'
+        // console.log(string.toUpperCase())
+
+
+
+        // Q.50 What is the drawback of declaring methods directly in JavaScript objects?
+
+        //Declaring methods directly in JavaScript objects has some drawbacks:
+
+        // Memory Use: Each object gets its own copy of the method, which can waste memory if there are many objects.
+
+        // No Inheritance: You can’t easily share methods between objects, making it harder to extend functionality.
+
+        // Harder to Override: Changing a method in a new version of the object can be more complicated.
+
+        // Less Clarity: It can be harder to see how the object is structured when methods are mixed in with data.
+
+        // Context Issues: If you use a method as a callback, it might not work as expected because it can lose its context (what this refers to).
+
+
+
+        // Q.51 Write a JavaScript program to get the current date. Expected Output :
+        // mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy?
+
+        // let todaysDate = new Date()
+        // let newdata = todaysDate.getTimezoneOffset()
+        // let newdata = todaysDate.toLocaleTimeString()
+        // let newdata = todaysDate.toLocaleDateString()
+        // let newdata = todaysDate.toLocaleString()
+        // let newdata = todaysDate.toISOString()
+        // let newdata = todaysDate.toDateString('default', { month: 'long' })
+        // console.log(newdata)
+
+
+
+        // Q.52 Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript?
+
+        // let myString = '30 Days Of JavaScript'
+        // let indexedChar = myString.indexOf('a')
+        // console.log(indexedChar)
+
+
+
+        // Q,53 Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript?
+
+        // let myString2 = '30 Days Of JavaScript'
+        // let indexedChar = myString2.lastIndexOf('a')
+        // console.log(indexedChar)
+
+
+
+        // Q.54 Form Validtion in JS?
+
+        // Form validation in JavaScript is the process of checking the input data in a form before it is submitted to ensure that it meets certain criteria.
+
+
+
+        // Q.55 Form in Email,Phone number, Password, Validation?
+        //  Email Validation
+        //  Format: Must match the standard email format(e.g., example@domain.com).
+        //  Domain: Must contain a valid domain(e.g., .com, .org, etc.).
+        //  Length: Should not exceed a certain length(typically 254 characters).
+        //  Required: Cannot be empty.
+
+        // Phone Number Validation
+        // Format: Must consist only of digits (0-9).
+        // Range: Should fall within a specified range (e.g., 1-100).
+        // Length: Can specify a minimum and maximum length (e.g., 1 to 10 digits).
+        // Required: Cannot be empty.
+
+        //  Password Validation
+        // Length: Must be a minimum length (commonly 8 characters).
+        // Complexity:
+        // Must include at least one uppercase letter (A-Z).
+        // Must include at least one lowercase letter (a-z).
+        // Must include at least one number (0-9).
+        // Must include at least one special character (e.g., !@#$%^&*).
+        // No common passwords: Should not be a commonly used password (e.g., "password123").
+        // Required: Cannot be empty.
+
+
+
+
+        // Q.56 Dynamic Form Validation in JS?
+
+        // Dynamic form validation in JavaScript allows you to validate form fields based on user interactions and conditions that change as the user fills out the form. This can enhance user experience by providing real-time feedback.
+
+
+
+        // Q.57 how many type of JS Event? How to use it ?
+
+        // JavaScript events are actions or occurrences that happen in the browser, which can be detected and responded to by JavaScript code.
+
+        // Mouse Events:
+
+        // click: Triggered when an element is clicked.
+        // dblclick: Triggered when an element is double-clicked.
+        // mouseover: Triggered when the mouse pointer moves over an element.
+        // mouseout: Triggered when the mouse pointer moves out of an element.
+        // mousemove: Triggered when the mouse pointer moves within an element.
+        // Keyboard Events:
+
+        // keydown: Triggered when a key is pressed down.
+        // keyup: Triggered when a key is released.
+        // keypress: Triggered when a key is pressed (deprecated in modern usage).
+        // Form Events:
+
+        // submit: Triggered when a form is submitted.
+        // change: Triggered when the value of an input changes.
+        // focus: Triggered when an input gains focus.
+        // blur: Triggered when an input loses focus.
+        // Window Events:
+
+        // load: Triggered when the window, document, or an image is fully loaded.
+        // resize: Triggered when the window is resized.
+        // scroll: Triggered when the document is scrolled.
+        // Touch Events (for mobile devices):
+
+        // touchstart: Triggered when a touch point is placed on the touch surface.
+        // touchmove: Triggered when a touch point is moved along the touch surface.
+        // touchend: Triggered when a touch point is removed from the touch surface.
+        // Other Events:
+
+        // DOMContentLoaded: Triggered when the initial HTML document has been completely loaded and parsed.
+        // error: Triggered when an error occurs while loading an external resource.
+
+        // USAGE:-
+
+        // Mouse Event
+        // document.getElementById('myButton').addEventListener('click', function() {
+        //     alert('Button clicked!');
+        // });
+
+
+
+        // Q.59 What is Bom vs Dom in JS?
+
+        // DOM(Document Object Model): It representation of the HTML or XML document as a tree structure.It Allows you to interact with and manipulate the content and structure of a web page.You can change text, add / remove elements, and handle events.
+
+        // BOM(Browser Object Model): A collection of objects that represent the browser and its components.It allows developers to control the browser window and access information about the browser environment. It Lets you interact with the browser itself, like controlling the window or accessing the browser's history. You can open new windows, navigate to different URLs, and get information about the browser.
+        //  Key Components of BOM
+
+        // Window Object:
+
+        // The top-level object in the BOM. It represents the browser window and provides methods and properties to control the window.
+        // Eg; --window.alert('Hello!'); // Displays an alert dialog
+
+        // Location Object:
+
+        // Represents the current URL of the browser window. It allows you to get or set the URL.
+        // Eg--- console.log(window.location.href); // Get current URL
+        // window.location.href = 'https://www.example.com'; // Redirect to a new URL
+
+        //  History Object:
+
+        // Allows you to interact with the browser's session history (the pages visited in the current tab).
+        // Eg--- window.history.back(); // Go back to the previous page
+
+
+        // Navigator Object:
+
+        // Provides information about the browser itself, such as the browser name, version, and user information.
+        // Eg--- console.log(window.navigator.userAgent); // Get user agent string
+
+        // Screen Object:
+
+        // Contains information about the user's screen, such as its width and height.
+        // Eg ---- console.log(window.screen.width); // Get screen width
+
+
+
+        // Q.60 Array vs object defences in JS?
+        // Arrays are ordered lists used to store multiple values in a single variable, with elements accessed by their index (starting from 0). They come with built-in methods for manipulation, such as push() and map(). On the other hand, objects are collections of key-value pairs used to store structured data, with properties accessed using keys (strings) rather than indices. Objects can contain methods (functions) and allow for dynamic addition or removal of properties.
+
+
+        // Q.61 Split the string into an array using split() Method?
+
+        // let splitStr = 'Hello, World'
+        // console.log(splitStr.split(''))
+
+
+
+        // Q.62 Check if the string contains a word Script using includes() method?
+
+        // let checkStr = 'I love Javascript'
+        // console.log(checkStr.includes('script'))
+
+
+
+        // Q.63 Change all the string characters to lowercase letters using toLowerCase() Method.
+
+        // let checkStr = 'I love Javascript'
+        // console.log(checkStr.toLowerCase())
+
+
+
+        // Q.64 What is Character at index 15 in ’30 Days of JavaScript’ string? Use charAt() method.
+
+        // let charStr = '30 Days of JavaScript'
+        // console.log(charStr.charAt(15))
+
+
+
+        // Q.65 copy to one string to another string in JS?
+
+        // let oneStr = '30 Days of JavaScript'
+
+        // let otherStr = oneStr
+        // console.log(otherStr)
+
+
+
+        // ● Create basic math operation in JS....................................................
+
+        // function calculate(operator) {
+        //     let input1 = parseInt(document.getElementById("inputOne").value)
+        //     let input2 = parseInt(document.getElementById("inputTwo").value)
+        //     switch (operator) {
+        //         case 'plus': ans_output = input1 + input2;
+        //             break;
+        //         case 'minus': ans_output = input1 - input2;
+        //             break;
+        //         case 'multi': ans_output = input1 * input2;
+        //             break;
+        //         case 'divide': ans_output = input1 / input2;
+        //             break;
+        //         case 'module': ans_output = input1 % input2;
+        //             break;
+        //     }
+        //     document.getElementById('ans_output').innerText = ans_output
+        // }
+
+       
+
+
+
+        //  Create result.....................................................................................................
+
+        // function calculateAvg() {
+        //     let val1 = parseInt(document.getElementById('c').value);
+        //     let val2 = parseInt(document.getElementById('cplus').value);
+        //     let val3 = parseInt(document.getElementById('db').value);
+        //     let val4 = parseInt(document.getElementById('html').value);
+        //     let val5 = parseInt(document.getElementById('css').value);
+        //     let val6 = parseInt(document.getElementById('php').value);
+        //     let val7 = parseInt(document.getElementById('java').value);
+
+        //     let sum = val1 + val2 + val3 + val4 + val5 + val6 + val7
+        //     let avg = (sum) / 350 * 100
+        //     console.log(avg)
+        //     document.getElementById('total').innerText = sum
+        //     document.getElementById('perc').innerText = Math.round(avg)
+        // }
+
+
+
+
+
+
+ // Create a slider using JavaScript...................................................................................................................... 
+
+        // let boxArr = document.getElementsByClassName('box')
+        // let currentIndex = 1
+        // boxArr[0].classList.add('focusedBox')
+        // let scrollableDiv = document.getElementById('scroll_div')
+
+        // function focusScrollBox(incr) {
+        //     if (incr) {
+        //         boxArr[currentIndex].classList.add('focusedBox')
+        //         // boxArr[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'center' }) // used to get the div in view frame.
+        //         if (currentIndex > 0) {
+        //             boxArr[currentIndex - 1].classList.remove('focusedBox')
+        //         }
+        //         currentIndex++
+        //         scrollableDiv.scrollLeft += 70
+        //     } else {
+        //         console.log(currentIndex)
+        //         if (currentIndex > 0) {
+        //             if (currentIndex != 1) {
+        //                 boxArr[currentIndex - 2].classList.add('focusedBox')
+        //                 // boxArr[currentIndex - 2].scrollIntoView({ behavior: 'smooth', block: 'center' })
+        //                 boxArr[currentIndex - 1].classList.remove('focusedBox')
+        //                 currentIndex--
+        //                 scrollableDiv.scrollLeft += -70
+        //             }
+        //             console.log(currentIndex)
+        //         } else {
+        //             boxArr[currentIndex].classList.add('focusedBox')
+        //         }
+        //     }
+        // }
+
+
+
+
+
+
+        // Change background using java script......................................................................... 
+
+        // function chaangeBGColor() {
+        //     let getcolor = document.getElementById('clg_input').value
+        //     console.log(getcolor)
+        //     // document.getElementsByClassName('conatainer_color')[0].style.background = getcolor
+        //     // or
+        //     document.getElementById('conatainer_color').style.background = getcolor
+        // }
+
+        // document.getElementById('scroll_div').addEventListener('scroll', function (e) {
+        //     console.log(1 % 3)
+
+        // })
+
+
+
+
+        // Create a hide show password functionalities............................................................................
+
+    // function hidetext() {
+        //     let iconEle = document.getElementById('eye_icon')
+        //     let inputvisibility = document.getElementById('pass_input1')
+        //     if (iconEle.classList.contains('fa-eye')) {
+        //         inputvisibility.type = 'password',
+
+        //             iconEle.classList.remove('fa-eye'),
+        //             iconEle.classList.add('fa-eye-slash')
+        //     } else (
+        //         inputvisibility.type = 'text',
+        //         iconEle.classList.remove('fa-eye-slash'),
+        //         iconEle.classList.add('fa-eye')
+        //     )
+        // }
+
+
+
+        //   Create a form and apply validations as shown in below example......................................................................................  
+
+        // function submiteForm() {
+        //     event.preventDefault()
+        //     let username = document.getElementById('username');
+        //     let error_note = document.getElementById('error_username');
+        //     (username.value.length < 3 || username.value.length > 20) ? (error_note.classList.add('show')) : (error_note.classList.remove('show'))
+
+
+        //     let emailInput = document.getElementById('emailInput');
+        //     let positionAt = emailInput.value.split('').indexOf('@')
+        //     let positionDot = emailInput.value.split('').indexOf('.')
+        //     let totalmailLength = emailInput.value.length
+        //     console.log(positionAt, positionDot, totalmailLength)
+        //     let emailError = document.getElementById('error_email');
+
+        //     if (positionAt > 1 && positionDot > positionAt + 2 && positionDot + 2 < totalmailLength) {
+        //         emailError.classList.remove('show')
+
+        //     }
+        //     else if ((positionAt == -1) && (positionDot == -1)) {
+        //         emailError.classList.add('show')
+        //     }
+        //     else {
+        //         emailError.classList.add('show')
+        //     }
+
+
+        //     let capCheck = /[A-Z]/;
+        //     let lowerCheck = /[a-z]/;
+        //     let numCheck = /[0-9]/
+        //     let specCheck = /[!@#$%^&*]/
+        //     let passwordInputVal = document.getElementById('password').value;
+        //     let errorPassword = document.getElementById('error_password');
+
+        //     if (passwordInputVal.length < 8) {
+        //         errorPassword.classList.add('show')
+        //         console.log('running......1')
+        //     } else if (!(capCheck.test(passwordInputVal) && lowerCheck.test(passwordInputVal) && numCheck.test(passwordInputVal) && specCheck.test(passwordInputVal))) {
+        //         errorPassword.classList.add('show')
+        //         console.log('running......2')
+        //     }
+        //     else {
+        //         errorPassword.classList.remove('show')
+        //     }
+
+        //     let confirmPass = document.getElementById('consfirmPass').value
+        //     let confirmPass_note = document.getElementById('error_confirmPassword')
+        //     console.log(confirmPass)
+        //     if (confirmPass !== passwordInputVal) {
+        //         confirmPass_note.classList.add('show')
+
+        //     } else {
+        //         confirmPass_note.classList.remove('show')
+        //     }
+        // }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
